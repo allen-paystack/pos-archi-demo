@@ -1,0 +1,5 @@
+include ':mylibrary-huaweii'
+include ':PosContract'
+include ':mylibrary-nexgo'
+include ':app'
+rootProject.name = "ArchitectureDemo"
