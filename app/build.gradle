@@ -62,5 +62,6 @@ dependencies {
     implementation project(':PosContract')
     nexgoImplementation project(':hardware-nexgo')
     huaweiiImplementation project(':hardware-huaweii')
+    epmsImplementation project(':processors-epms')
 
 }

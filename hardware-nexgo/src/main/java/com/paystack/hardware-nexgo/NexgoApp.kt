@@ -1,4 +1,4 @@
-package com.paystack.hardware-nexgo
+package com.paystack.hardware_nexgo
 
 import com.paystack.poscontract.Hardware
 
