@@ -1,4 +1,4 @@
-package com.paystack.mylibrary_huaweii
+package com.paystack.hardware-huaweii
 
 import com.paystack.poscontract.Hardware
 

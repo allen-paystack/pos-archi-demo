@@ -1,5 +1,6 @@
-include ':mylibrary-huaweii'
+include ':processor-nibss'
+include ':hardware-huaweii'
 include ':PosContract'
-include ':mylibrary-nexgo'
+include ':hardware-nexgo'
 include ':app'
 rootProject.name = "ArchitectureDemo"
