@@ -21,15 +21,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    flavorDimensions "pos"
+    flavorDimensions "hardware", "processor"
     productFlavors {
         nexgo {
-            dimension "pos"
+            dimension "hardware"
             applicationIdSuffix ".nexgo"
         }
         huaweii {
-            dimension "pos"
+            dimension "hardware"
             applicationIdSuffix ".huaweii"
+        }
+        epms {
+            dimension "processor"
+        }
+        tams {
+            dimension "processor"
         }
     }
     compileOptions {
