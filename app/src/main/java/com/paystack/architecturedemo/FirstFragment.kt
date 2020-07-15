@@ -5,16 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.paystack.poscontract.Hardware
+import com.paystack.poscontract.Processor
 import kotlinx.android.synthetic.main.fragment_first.*
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FirstFragment : Fragment(), Hardware.Callback {
-
+class FirstFragment : Fragment(), Hardware.Callback, Processor.Callback {
+lateinit var hardware: Hardware
+    lateinit var processor: Processor
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -30,11 +33,17 @@ class FirstFragment : Fragment(), Hardware.Callback {
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
 
-        val module = HardwareModule().getHardwareModule()
-        module.readCard(this)
+        hardware = HardwareModule().getHardwareModule()
+        processor = ProcessorModule().getProcessorModule()
+        hardware.readCard(this)
     }
 
     override fun cardDetails(message: String) {
         textview_first.text = message
+        hardware.readCard(this)
+    }
+
+    override fun transactionDetails(message: String) {
+        Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
     }
 }

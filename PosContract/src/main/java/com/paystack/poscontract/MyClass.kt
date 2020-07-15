@@ -12,6 +12,6 @@ interface Processor {
     fun doTransaction(listener: Callback)
 
     interface Callback {
-        fun cardDetails(message: String)
+        fun transactionDetails(message: String)
     }
 }

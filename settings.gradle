@@ -1,3 +1,4 @@
+include ':processors-tams'
 include ':processors-epms'
 include ':hardware-huaweii'
 include ':PosContract'
