@@ -40,7 +40,7 @@ lateinit var hardware: Hardware
 
     override fun cardDetails(message: String) {
         textview_first.text = message
-        hardware.readCard(this)
+        processor.doTransaction(this)
     }
 
     override fun transactionDetails(message: String) {
