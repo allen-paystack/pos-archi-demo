@@ -1,3 +1,4 @@
+include ':database'
 include ':processors-tams'
 include ':processors-epms'
 include ':hardware-huaweii'
