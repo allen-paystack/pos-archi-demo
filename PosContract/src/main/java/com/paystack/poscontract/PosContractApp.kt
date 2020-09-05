@@ -22,9 +22,13 @@ interface Hardware {
 interface Processor {
     fun doCallHome()
     fun downloadKeys()
-    fun doTransaction(transactionType: TransactionType, listener: Callback)
+    fun doTransaction(
+        transactionType: TransactionType,
+        transaction: Transaction,
+        listener: Callback
+    )
 
     interface Callback {
-        fun transactionDetails(message: String)
+        fun onTransactionResponse(message: String)
     }
 }
