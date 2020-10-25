@@ -5,14 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.database.Transaction
 import com.paystack.poscontract.Hardware
 import com.paystack.poscontract.Processor
+import com.paystack.poscontract.models.Transaction
 import com.paystack.poscontract.models.TransactionType
-import kotlinx.android.synthetic.main.fragment_first.*
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -61,6 +59,7 @@ class FirstFragment : Fragment(), Hardware.Callback, Processor.Callback {
     }
 
     override fun processComplete(transaction: Transaction) {
+        // map transaction to TransactionEntity and store it!
         processor.doTransaction(TransactionType.PURCHASE, transaction, this)
     }
 

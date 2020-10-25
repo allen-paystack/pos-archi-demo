@@ -1,4 +1,4 @@
-package com.example.database
+package com.paystack.poscontract.models
 
 data class Transaction(
     var paystackReference: String = "",

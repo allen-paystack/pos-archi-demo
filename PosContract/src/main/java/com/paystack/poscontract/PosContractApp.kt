@@ -1,14 +1,14 @@
 package com.paystack.poscontract
 
 import android.content.Context
-import com.example.database.Transaction
 import com.paystack.poscontract.models.ReceiptType
+import com.paystack.poscontract.models.Transaction
 import com.paystack.poscontract.models.TransactionType
 
 interface Hardware {
     fun init(context: Context, listener: Callback)
     fun readCard(paystackReference: String, amount: Int)
-    fun printReceipt(receiptType: ReceiptType, isReprint: Boolean)
+    fun printReceipt(receiptType: ReceiptType, isReprint: Boolean, transaction: Transaction)
 
     interface Callback {
         fun cardReadSuccessful()
