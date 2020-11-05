@@ -1,9 +1,24 @@
 package com.paystack.processors_tams
 
 import com.paystack.poscontract.Processor
+import com.paystack.poscontract.models.Transaction
+import com.paystack.poscontract.models.TransactionType
 
 class TamsApp : Processor {
-    override fun doTransaction(listener: Processor.Callback) {
-        listener.transactionDetails("tams 223312903908")
+
+    override fun doCallHome() {
+        TODO("Not yet implemented")
+    }
+
+    override fun downloadKeys() {
+        TODO("Not yet implemented")
+    }
+
+    override fun doTransaction(
+        transactionType: TransactionType,
+        transaction: Transaction,
+        listener: Processor.Callback
+    ) {
+        TODO("Not yet implemented")
     }
 }
