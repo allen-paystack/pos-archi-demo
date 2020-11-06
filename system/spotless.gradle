@@ -1,0 +1,25 @@
+buildscript {
+    ext.ktlint_version = '0.36.0'
+}
+
+apply plugin: 'com.diffplug.spotless'
+
+spotless {
+    kotlin {
+        target '**/*.kt'
+        targetExclude ".idea/", "**/build/**", "**/.*"
+        ktlint(ktlint_version)
+        trimTrailingWhitespace()
+        indentWithSpaces()
+        endWithNewline()
+    }
+    format 'xml', {
+        target '**/res/**/*.xml'
+        indentWithSpaces()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
+    groovyGradle {
+        target '**/*.gradle'
+    }
+}

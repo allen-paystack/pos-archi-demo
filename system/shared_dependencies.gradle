@@ -1,0 +1,7 @@
+dependencies {
+    def ext = rootProject.ext
+    implementation project(ext.posContract)
+    def dependency = ext.appDependencies
+    implementation dependency.coreKtx
+    implementation dependency.appCompat
+}
