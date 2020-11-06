@@ -6,6 +6,6 @@ import com.paystack.poscontract.Hardware
 class HardwareModule {
 
     fun getHardwareModule(): Hardware {
-        return HuaweiiApp();
+        return HuaweiiApp()
     }
 }
